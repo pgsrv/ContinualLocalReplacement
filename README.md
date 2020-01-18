@@ -13,6 +13,9 @@ Please check our published paper for more algorithm details (XXX).
 <img src="https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization1.gif" height="300px" alt="demo1" >
 </div>
 
+![demo3](https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/saliency_map.png)
+
+
 # 1. Prerequisites
 This code is implemented on Pytorch. 
 So you may need to install
