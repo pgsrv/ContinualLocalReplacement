@@ -9,8 +9,8 @@ This repository includes the source codes of ContinualLocalReplacement and its w
 Please check our published paper for more algorithm details (XXX).
 
 <div align="center">
-<img src="https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization1.gif" height="300px" alt="demo1" >
 <img src="https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization2.gif" height="300px" alt="demo2" >
+<img src="https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization1.gif" height="300px" alt="demo1" >
 </div>
 
 # 1. Prerequisites
