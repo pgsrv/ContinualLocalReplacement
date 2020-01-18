@@ -8,7 +8,10 @@ For example, it can be easily combined with the weight imprinting technique.
 This repository includes the source codes of ContinualLocalReplacement and its weight imprinting variant.
 Please check our published paper for more algorithm details (XXX).
 
-![demon](https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization1.gif)
+<div align="center">
+<img src="https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization1.gif" height="300px" alt="demo1" >
+<img src="https://github.com/Lecanyu/ContinualLocalReplacement/raw/master/images/tsne_visualization2.gif" height="300px" alt="demo2" >
+</div>
 
 # 1. Prerequisites
 This code is implemented on Pytorch. 
