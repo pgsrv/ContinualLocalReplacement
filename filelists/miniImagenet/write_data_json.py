@@ -5,8 +5,8 @@ Generate json files. Following the standard format in original repository https:
 import os
 import glob
 
-data_path = os.path.join("/home/CanyuLe/mini-imagenet-original")  # use original mini-imagenet
-# data_path = os.path.join("D:/mini-imagenet-original")
+data_path = "/home/CanyuLe/mini-imagenet-original"  # use original mini-imagenet
+# data_path = "D:/mini-imagenet-original"
 
 train_path = os.path.join(data_path, "train")
 val_path = os.path.join(data_path, "val")
