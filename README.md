@@ -28,7 +28,7 @@ We have tested this code on Ubuntu and Windows10 x64 operation system.
 # 2. Run 
 Run codes using below commands. 
 We conduct all experiments on default hyper-parameters. But you may try other hyper-parameters.
-For example, you can actually achieve better performance than the reported result on CUB with imprint_jigsaw method and setting jig_replace_max_num=9.
+For example, you can actually achieve better performance than the reported results when you test imprint_jigsaw method with jig_replace_max_num=9 on CUB dataset.
 
 We also provide the driver scripts. Please check the run_scripts folder.
 
