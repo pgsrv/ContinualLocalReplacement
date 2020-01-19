@@ -30,6 +30,11 @@ Run codes using below commands. You can change the dataset parameter to run on o
 
 We also provide the driver scripts. Please check the run_scripts folder.
 
+We conduct all experiments on default hyper-parameters. But you may try other hyper-parameters.
+
+For example, you can actually achieve better performance than the reported result on CUB with imprint_jigsaw method and setting jig_replace_max_num=9.
+
+
 Organize Dataset
 ------------
 Before runing, please check the code to make sure all pathes set correctly.
@@ -59,8 +64,11 @@ python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method i
 
 # 3. Datasets and pre-trained net parameters
 We provide our pre-trained parameters for reproducing the results in the paper.
-You can download them from [here](ftp://graphics.xmu.edu.cn/checkpoints_for_paper_results.zip).
+You can download them from [HERE](ftp://graphics.xmu.edu.cn/checkpoints_for_paper_results.zip).
 
+Note that you may get a little bit higher or lower accuracy (around 1~2%) than the reported results in the paper.
+We think it is normal and acceptable since there are some random properties on training and episodic testing.
+ 
 To make it convenient, we also provide links for downloading the experiment datasets ([MiniImagenet](ftp://graphics.xmu.edu.cn/miniImagenet_.zip), [TieredImagenet](ftp://graphics.xmu.edu.cn/tiered_imagenet.tar), [CUB-200](ftp://graphics.xmu.edu.cn/CUB200.tgz), [Caltech-256](ftp://graphics.xmu.edu.cn/caltech256.tar)) even though people can download them from original sources or official websites.
 
 
