@@ -26,19 +26,39 @@ We have tested this code on Ubuntu and Windows10 x64 operation system.
 
 
 # 2. Run 
+Run codes using below commands. You can change the dataset parameter to run on other datasets.  
+
+We also provide the driver scripts. Please check the run_scripts folder.
+
+Organize Dataset
+------------
+Please read the code to make sure all pathes set correctly.
+```
+python ./filelists/miniImagenet/write_data_json.py
+```
+
 
 Training
 ------------
+```
+python ./train.py --dataset miniImagenet --method jigsaw --test_n_way 5 --n_shot 5 --gpu 0
+python ./train.py --dataset miniImagenet --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 0
+```
 
 Testing
 ------------
-
+```
+python ./test.py --dataset miniImagenet --method jigsaw --test_n_way 5 --n_shot 1 --gpu 1
+python ./test.py --dataset miniImagenet --method jigsaw --test_n_way 5 --n_shot 5 --gpu 1
+python ./test.py --dataset miniImagenet --method imprint_jigsaw --test_n_way 5 --n_shot 1 --gpu 1
+python ./test.py --dataset miniImagenet --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 1
+```
 
 # 3. Datasets and pre-trained net parameters
 We provide our pre-trained parameters for reproducing the results in the paper.
-You can download them from [here](xxx).
+You can download them from [here](ftp://graphics.xmu.edu.cn/checkpoints_for_paper_results.zip).
 
-To make it convenient, we also provide links for downloading the experiment datasets ([MiniImagenet](xxx), [TieredImagenet](xxx), [CUB-200](xxx), [Caltech-256](xxx)) even though people can download them from original sources or official websites.
+To make it convenient, we also provide links for downloading the experiment datasets ([MiniImagenet](ftp://graphics.xmu.edu.cn/miniImagenet_.zip), [TieredImagenet](ftp://graphics.xmu.edu.cn/tiered_imagenet.tar), [CUB-200](ftp://graphics.xmu.edu.cn/CUB200.tgz), [Caltech-256](ftp://graphics.xmu.edu.cn/caltech256.tar)) even though people can download them from original sources or official websites.
 
 
 # 4. Citation
