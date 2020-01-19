@@ -59,7 +59,7 @@ python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method i
 python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 1
 ```
 
-# 3. Datasets and pre-trained net parameters
+# 3. Datasets and Pre-trained Parameters
 We provide our pre-trained parameters for reproducing the results in the paper.
 You can download them from [HERE](ftp://graphics.xmu.edu.cn/checkpoints_for_paper_results.zip).
 
