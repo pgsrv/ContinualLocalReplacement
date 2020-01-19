@@ -32,7 +32,7 @@ We also provide the driver scripts. Please check the run_scripts folder.
 
 Organize Dataset
 ------------
-Please read the code to make sure all pathes set correctly.
+Before runing, please check the code to make sure all pathes set correctly.
 ```
 python ./filelists/miniImagenet/write_data_json.py
 ```
