@@ -1,6 +1,9 @@
 # ContinualLocalReplacement
 Continual local replacement is a simple yet effective method for few-shot image recognition.
 This method is able to introduce more semantic information and significantly enlarge the supervised signals in embedded space for decision boundary learning. See T-SNE visualization and saliency maps below.
+In T-SNE visualization, the labeled images (i.e. support set) and synthesized images are marked by stars and triangles, respectively.
+During fine tuning, the embedded features change and can cover a larger area within each embedded cluster for learning.
+
 
 This algorithm is based on standard transfer learning and thus it has a good scalability.
 For example, it can be easily combined with the weight imprinting technique.
