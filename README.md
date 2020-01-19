@@ -44,17 +44,17 @@ python ./filelists/caltech256/write_data_json.py
 Training
 ------------
 ```
-python ./train.py --dataset [miniImagenet/tieredImagenet/CUB/caltech256] --method jigsaw --test_n_way 5 --n_shot 5 --gpu 0
-python ./train.py --dataset [miniImagenet/tieredImagenet/CUB/caltech256] --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 0
+python ./train.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method jigsaw --test_n_way 5 --n_shot 5 --gpu 0
+python ./train.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 0
 ```
 
 Testing
 ------------
 ```
-python ./test.py --dataset [miniImagenet/tieredImagenet/CUB/caltech256] --method jigsaw --test_n_way 5 --n_shot 1 --gpu 1
-python ./test.py --dataset [miniImagenet/tieredImagenet/CUB/caltech256] --method jigsaw --test_n_way 5 --n_shot 5 --gpu 1
-python ./test.py --dataset [miniImagenet/tieredImagenet/CUB/caltech256] --method imprint_jigsaw --test_n_way 5 --n_shot 1 --gpu 1
-python ./test.py --dataset [miniImagenet/tieredImagenet/CUB/caltech256] --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 1
+python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method jigsaw --test_n_way 5 --n_shot 1 --gpu 1
+python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method jigsaw --test_n_way 5 --n_shot 5 --gpu 1
+python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method imprint_jigsaw --test_n_way 5 --n_shot 1 --gpu 1
+python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method imprint_jigsaw --test_n_way 5 --n_shot 5 --gpu 1
 ```
 
 # 3. Datasets and pre-trained net parameters
