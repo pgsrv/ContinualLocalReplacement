@@ -64,9 +64,9 @@ python ./test.py --dataset miniImagenet/tieredImagenet/CUB/caltech256 --method i
 
 # 3. Datasets and Pre-trained Parameters
 We provide our pre-trained parameters for reproducing the results in the paper.
-You can download them from [HERE](ftp://graphics.xmu.edu.cn/checkpoints_for_paper_results.zip).
+You can download them from [HERE](http://graphics.xmu.edu.cn/students/canyu/checkpoints_for_paper_results.zip).
  
-To make it convenient, we also provide links for downloading the experiment datasets ([MiniImagenet](ftp://graphics.xmu.edu.cn/miniImagenet_.zip), [TieredImagenet](ftp://graphics.xmu.edu.cn/tiered_imagenet.tar), [CUB-200](ftp://graphics.xmu.edu.cn/CUB200.tgz), [Caltech-256](ftp://graphics.xmu.edu.cn/caltech256.tar)) even though people can download them from original sources or official websites.
+To make it convenient, we also provide links for downloading the experiment datasets ([MiniImagenet](http://graphics.xmu.edu.cn/students/canyu/miniImagenet.zip), [TieredImagenet](http://graphics.xmu.edu.cn/students/canyu/tiered_imagenet.tar), [CUB-200](http://graphics.xmu.edu.cn/students/canyu/CUB200.tgz), [Caltech-256](http://graphics.xmu.edu.cn/students/canyu/caltech256.tar)) even though you can download them from original sources or official websites.
 
 
 # 4. Citation
