@@ -9,7 +9,7 @@ This algorithm is based on standard transfer learning and thus it has a good sca
 For example, it can be easily combined with the weight imprinting technique.
 
 This repository includes the source codes of ContinualLocalReplacement and its weight imprinting variant.
-Please check our published paper for more algorithm details (XXX).
+Please check our published paper for more algorithm details (https://arxiv.org/abs/2001.08366).
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/Lecanyu/ContinualLocalReplacement/master/images/tsne_visualization2.gif" height="300px" alt="demo2" >
