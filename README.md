@@ -73,7 +73,12 @@ To make it convenient, we also provide links for downloading the experiment data
 If our work is useful in your research, please cite 
 
 ```
-Will do
+@article{le2020local,
+  title={Continual Local Replacement for Few-shot Image Recognition},
+  author={Canyu Le, Zhonggui Chen, Xihan Wei, Biao Wang, Lei Zhang},
+  journal={arXiv preprint arXiv:2001.08366},
+  year={2020}
+}
 ```
 
 # 5. References
