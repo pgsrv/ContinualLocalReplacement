@@ -11,6 +11,7 @@ def parse_args(script):
     parser.add_argument('--test_n_way'  , default=5, type=int,  help='class num to classify for testing (validation) ')
     parser.add_argument('--n_shot'      , default=5, type=int,  help='number of labeled data in each class, same as n_support')
     parser.add_argument('--n_query', default=15, type=int, help='number of data for training or testing')
+    parser.add_argument('--n_extra_data', default=15, type=int, help='number of unlabeled data')
 
     # params for jigsaw methods
     parser.add_argument('--jig_replace_num_train', default=4, type=int, help='the number of replaced blocks in jigsaw augmentation during training')

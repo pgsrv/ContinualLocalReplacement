@@ -24,20 +24,20 @@ if __name__ == '__main__':
         os.makedirs(record_dir)
 
     image_size = 224
+    if params.dataset == "miniImagenet":
+        num_class = 64
+    elif params.dataset == "tieredImagenet":
+        num_class = 351
+    elif params.dataset == "caltech256":
+        num_class = 257
+    elif params.dataset == "CUB":
+        num_class = 200  # set to 200 since the label range 0~199 even though there are only 100 classes to be trained
+    else:
+        raise ValueError('Unknown dataset')
+
     if params.method in ['jigsaw', 'imprint_jigsaw']:
-        extra_data = 15     # extra_unlabeled data
-        test_datamgr = SetDataManager(image_size, n_way=params.test_n_way, n_support=params.n_shot, n_query=params.n_query+extra_data, n_eposide=1)
+        test_datamgr = SetDataManager(image_size, n_way=params.test_n_way, n_support=params.n_shot, n_query=params.n_query+params.n_extra_data, n_eposide=1)
         test_loader = test_datamgr.get_data_loader(test_file, aug=False)
-        if params.dataset == "miniImagenet":
-            num_class = 64
-        elif params.dataset == "tieredImagenet":
-            num_class = 351
-        elif params.dataset == "caltech256":
-            num_class = 257
-        elif params.dataset == "CUB":
-            num_class = 200  # set to 200 since the label range 0~199 even though there are only 100 classes to be trained
-        else:
-            raise ValueError('Unknown dataset')
 
         if params.method == "jigsaw":
             model = Jigsaw(num_class=num_class)

@@ -10,7 +10,7 @@ import torchvision
 import torch.nn as nn
 import numpy as np
 import torch.nn.functional as F
-
+from utils import tile
 
 patch_xl = np.array([0,0,0,74,74,74,148,148,148])
 patch_xr = np.array([74,74,74,148,148,148,224,224,224])
@@ -111,6 +111,7 @@ class ImprintJigsaw(nn.Module):
         self.n_query = params.n_query
         self.n_way = params.test_n_way
         self.n_support = params.n_shot
+        self.repeat_time = 1
 
         iter_num = len(test_loader)
         for i, (x, _) in enumerate(test_loader):
@@ -134,9 +135,12 @@ class ImprintJigsaw(nn.Module):
     def adapt_with_jigsaw(self, x):
         """ backbone is fixed """
         # input data
+        if self.n_support == 1:
+            self.repeat_time = 5  # repeat support data if shot =1
         x_support = x[:, :self.n_support]
-        x_support = x_support.contiguous().view(self.n_way * self.n_support, *x.size()[2:])
-        y_support = torch.from_numpy(np.repeat(range(self.n_way), self.n_support)).long().cuda()
+        x_support = tile(x_support, dim=1, n_tile=self.repeat_time)
+        x_support = x_support.contiguous().view(self.n_way * self.n_support * self.repeat_time, *x.size()[2:])
+        y_support = torch.from_numpy(np.repeat(range(self.n_way), self.n_support * self.repeat_time)).long().cuda()
 
         x_query = x[:, self.n_support:(self.n_support+self.n_query)]
         x_query = x_query.contiguous().view(self.n_way * self.n_query, *x.size()[2:])
@@ -233,7 +237,7 @@ class ImprintJigsaw(nn.Module):
         topk_labels = random_y_unlabeled
         return label2idx, topk_labels
 
-    def selected_by_pseudo_labels(self, model, unlabeled, high_confidence=False):
+    def selected_by_pseudo_labels(self, model, unlabeled):
         model.eval()
         with torch.no_grad():
             unlabeled_logits = model.forward(unlabeled)  # pseudo label
@@ -241,20 +245,16 @@ class ImprintJigsaw(nn.Module):
         topk_scores = topk_scores.view(-1)
         topk_labels = topk_labels.view(-1)
 
-        # descend sorting so that guessed label with higher score will be selected preferentially
-        if high_confidence:
-            topk_scores, sorted_idx = topk_scores.sort(descending=True)
-            topk_labels = topk_labels[sorted_idx]
-
         init_idx = torch.randperm(unlabeled.size(0))
         label2idx = []
+
+        n_support = self.n_support *self.repeat_time
         for i in range(self.n_way):
-            label2idx.append(init_idx[i * self.n_support:(i + 1) * self.n_support])
+            label2idx.append(init_idx[i * n_support:(i + 1) * n_support])
             idx = torch.nonzero(topk_labels == i).view(-1)
             # shuffle pseudo labels (randomly select from corresponding class)
-            if not high_confidence:
-                idx = idx[torch.randperm(idx.size(0))]
-            k = min(idx.size(0), self.n_support)
+            idx = idx[torch.randperm(idx.size(0))]
+            k = min(idx.size(0), n_support)
             label2idx[i][:k] = idx[:k]
 
         return label2idx, topk_labels

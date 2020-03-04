@@ -76,8 +76,7 @@ if __name__ == '__main__':
     base_jigsaw_datamgr = JigsawDataManger(image_size, batch_size=batch_size, max_replace_block_num=params.jig_replace_num_train)
     base_jigsaw_loader = base_jigsaw_datamgr.get_data_loader(base_file, aug=False)
 
-    extra_data = 15     # extra_unlabeled data
-    val_datamgr = SetDataManager(image_size, n_way=params.test_n_way, n_support=params.n_shot, n_query=params.n_query+extra_data, n_eposide=50)
+    val_datamgr = SetDataManager(image_size, n_way=params.test_n_way, n_support=params.n_shot, n_query=params.n_query+params.n_extra_data, n_eposide=50)
     val_loader = val_datamgr.get_data_loader(val_file, aug=False)
 
     if params.dataset == "miniImagenet":
@@ -93,8 +92,10 @@ if __name__ == '__main__':
 
     if params.method == "jigsaw":
         model = Jigsaw(num_class=num_class)
-    else:
+    elif params.method == "imprint_jigsaw":
         model = ImprintJigsaw(num_class=num_class)
+    else:
+        raise ValueError('Unknown method')
 
     model = model.cuda()
 
