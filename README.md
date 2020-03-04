@@ -68,8 +68,21 @@ You can download them from [HERE](http://graphics.xmu.edu.cn/students/canyu/chec
  
 To make it convenient, we also provide links for downloading the experiment datasets ([MiniImagenet](http://graphics.xmu.edu.cn/students/canyu/miniImagenet.zip), [TieredImagenet](http://graphics.xmu.edu.cn/students/canyu/tiered_imagenet.tar), [CUB-200](http://graphics.xmu.edu.cn/students/canyu/CUB200.tgz), [Caltech-256](http://graphics.xmu.edu.cn/students/canyu/caltech256.tar)) even though you can download them from original sources or official websites.
 
+# 4. Results
+|          (%)           | Mini 1-shot  | Mini 5-shot  | Tiered 1-shot | Tiered 5-shot | 
+| ---------------------- | ------------ | ------------ | ------------ | ------------ |
+| Vanilla           | `56.44 ± 0.81` | `78.18 ± 0.60` | `63.93 ± 0.89` | `84.66 ± 0.62` |
+| CLR           | __`66.33 ± 0.93`__ | __`81.12 ± 0.60`__ | __`74.76 ± 0.97`__ | __`86.78 ± 0.66`__ | 
+| CLR + Imprinting           | `63.54 ± 0.85` | `78.26 ± 0.61` | `73.29 ± 0.97` | `85.04 ± 0.64` | 
 
-# 4. Citation
+|          (%)           | CUB-200 1-shot | CUB-200 5-shot  | Caltech256 1-shot | Caltech256 5-shot | 
+| ---------------------- | ------------ | ------------ | ------------ | ------------ |
+| Vanilla                | `65.91 ± 0.88` | `83.45 ± 0.51` | `59.32 ± 0.88` | `79.95 ± 0.67` |
+| CLR                    | `68.00 ± 0.92` | `84.26 ± 0.53` | __`65.74 ± 0.92`__ | __`83.05 ± 0.60`__ | 
+| CLR + Imprinting       | __`73.80 ± 0.92`__ | __`87.46 ± 0.48`__ | __`65.88 ± 0.97`__ | `81.16 ± 0.64` | 
+
+
+# 5. Citation
 If our work is useful in your research, please cite 
 
 ```
